@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mkay Designs | Graphic Design & Creative Services</title>
+
+  <meta name="description" content="Mkay Designs - Creative graphic design, digital artwork and creative services by Mkay.">
+  <meta name="author" content="Mkay Designs">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0f;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 35px;
+      background: linear-gradient(135deg, #111118, #1c1025);
+    }
+
+    .logo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8a2be2, #ff1493);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 38px;
+      font-weight: bold;
+      box-shadow: 0 0 35px rgba(255, 20, 147, 0.35);
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      color: #cccccc;
+      font-size: 17px;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: auto;
+      padding: 35px 0 60px;
+    }
+
+    section {
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 27px;
+    }
+
+    .about {
+      text-align: center;
+      color: #cccccc;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .service {
+      background: #15151d;
+      border: 1px solid #292936;
+      border-radius: 15px;
+      padding: 25px 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: #a855f7;
+      box-shadow: 0 10px 25px rgba(168, 85, 247, 0.15);
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .service h3 {
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .contact-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .contact-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .tiktok {
+      background: #111111;
+      border: 1px solid #444;
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+    }
+
+    .facebook {
+      background: #1877f2;
+    }
+
+    .email {
+      background: #555555;
+    }
+
+    .whatsapp {
+      background: #25d366;
+      color: #071b0d;
+    }
+
+    .call {
+      background: #7c3aed;
+    }
+
+    .icon {
+      font-size: 22px;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #17121f, #211326);
+      border: 1px solid #352345;
+      border-radius: 20px;
+      padding: 35px 20px;
+    }
+
+    .cta p {
+      color: #ccc;
+      margin: 12px auto 22px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .main-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .main-button:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #24242c;
+      padding: 25px 15px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .contact-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-top: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">MK</div>
+
+    <h1>MKAY DESIGNS</h1>
+
+    <p class="tagline">
+      Creative Designs. Unique Ideas. Professional Results.
+    </p>
+  </header>
+
+
+  <main class="container">
+
+    <!-- ABOUT -->
+    <section>
+      <h2>About Mkay Designs</h2>
+
+      <p class="about">
+        Welcome to Mkay Designs. We create creative and eye-catching
+        digital designs for individuals, artists, businesses and brands.
+        Whether you need a poster, logo, social media artwork or custom
+        graphics, Mkay Designs is ready to bring your ideas to life.
+      </p>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section>
+      <h2>My Services</h2>
+
+      <div class="services">
+
+        <div class="service">
+          <div class="service-icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>Creative and professional graphics for your personal or business needs.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Designs</h3>
+          <p>Eye-catching posts, flyers and promotional artwork for social media.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">💎</div>
+          <h3>Logo Design</h3>
+          <p>Unique logos designed to give your brand a professional identity.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">🎬</div>
+          <h3>Poster & Flyer Design</h3>
+          <p>Professional posters and flyers for events, businesses and promotions.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section>
+      <h2>Connect With Me</h2>
+
+      <div class="contact-buttons">
+
+        <!-- TikTok -->
+        <a
+          class="contact-button tiktok"
+          href="https://www.tiktok.com/@movieflix0054"
+          target="_blank"
+          rel="noopener noreferrer">
+          <span class="icon">🎵</span>
+          TikTok
+        </a>
+
+        <!-- Instagram -->
+        <a
+          class="contact-button instagram"
+          href="https://www.instagram.com/mkayshawa"
+          target="_blank"
+          rel="noopener noreferrer">
+          <span class="icon">📸</span>
+          Instagram
+        </a>
+
+        <!-- Facebook -->
+        <a
+          class="contact-button facebook"
+          href="https://www.facebook.com/profile.php?id=100077734683661"
+          target="_blank"
+          rel="noopener noreferrer">
+          <span class="icon">f</span>
+          Facebook
+        </a>
+
+        <!-- Email -->
+        <a
+          class="contact-button email"
+          href="mailto:Mikeshawa54@gmail.com">
+          <span class="icon">✉️</span>
+          Email Me
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          class="contact-button whatsapp"
+          href="https://wa.me/260779070857"
+          target="_blank"
+          rel="noopener noreferrer">
+          <span class="icon">💬</span>
+          WhatsApp
+        </a>
+
+        <!-- Phone Call -->
+        <a
+          class="contact-button call"
+          href="tel:+260769307422">
+          <span class="icon">📞</span>
+          Call Me
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+      <h2>Need a Design?</h2>
+
+      <p>
+        Have an idea for a logo, poster, flyer, social media design or
+        another creative project? Get in touch with Mkay Designs today.
+      </p>
+
+      <a
+        class="main-button"
+        href="https://wa.me/260779070857"
+        target="_blank"
+        rel="noopener noreferrer">
+        💬 Message Me on WhatsApp
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <strong>Mkay Designs</strong>. All Rights Reserved.
+    </p>
+
+    <p style="margin-top: 8px;">
+      Designed by Mkay
+    </p>
+  </footer>
+
+</body>
+  </html>
