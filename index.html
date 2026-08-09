@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mkay Designs | Creative Graphic Design</title>
+  <meta name="description" content="Mkay Designs — Creative graphic design, branding, posters, logos, social media designs and more.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #070707;
+      --card: #111111;
+      --card2: #171717;
+      --text: #ffffff;
+      --muted: #a7a7a7;
+      --accent: #00ff88;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(7,7,7,0.85);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .menu {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 7% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: var(--accent);
+      filter: blur(180px);
+      opacity: .08;
+      right: -100px;
+      top: 100px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid rgba(0,255,136,.3);
+      border-radius: 50px;
+      color: var(--accent);
+      font-size: 13px;
+      margin-bottom: 25px;
+      background: rgba(0,255,136,.04);
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 9vw, 110px);
+      line-height: .9;
+      letter-spacing: -5px;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,255,136,.2);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 7%;
+    }
+
+    .section-title {
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--accent);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(35px, 5vw, 60px);
+      line-height: 1;
+      margin-top: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 600px;
+      margin-top: 15px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 15px;
+      transition: .3s;
+    }
+
+    .service:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0,255,136,.35);
+    }
+
+    .service-number {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    .service h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .work {
+      height: 330px;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #171717, #090909);
+      border: 1px solid var(--border);
+    }
+
+    .work img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .work:hover img {
+      transform: scale(1.08);
+    }
+
+    .work-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      background: linear-gradient(transparent, rgba(0,0,0,.9));
+    }
+
+    .work-overlay h3 {
+      font-size: 20px;
+    }
+
+    .work-overlay p {
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .about-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat {
+      padding: 25px;
+      background: var(--card2);
+      border-radius: 12px;
+    }
+
+    .stat h3 {
+      color: var(--accent);
+      font-size: 35px;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* PRICING */
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 18px;
+    }
+
+    .price-card.featured {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+    }
+
+    .price-card .label {
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .price-card h3 {
+      margin: 15px 0;
+      font-size: 25px;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .price small {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .features {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .features li {
+      color: #bbb;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .contact h2 {
+      font-size: clamp(40px, 7vw, 80px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #080808;
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 140px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .services,
+      .portfolio,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#home" class="logo">Mkay<span>.</span></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="tag">CREATIVE DESIGN STUDIO</div>
+
+      <h1>
+        WE DESIGN<br>
+        <span>YOUR VISION.</span>
+      </h1>
+
+      <p>
+        Welcome to Mkay Designs — a creative design studio focused on
+        bold visuals, powerful branding and designs that make people look twice.
+      </p>
+
+      <div class="buttons">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+
+        <!-- CHANGE THIS NUMBER -->
+        <a href="https://wa.me/260YOURNUMBER" class="btn btn-outline">
+          WhatsApp Me
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="section-title">
+      <small>What I Do</small>
+      <h2>My Services</h2>
+      <p>
+        Professional creative services for individuals, artists,
+        businesses and brands.
+      </p>
+    </div>
+
+    <div class="services">
+
+      <div class="service">
+        <div class="service-number">01</div>
+        <h3>Graphic Design</h3>
+        <p>
+          Creative posters, flyers, advertisements and promotional graphics
+          designed to grab attention.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">02</div>
+        <h3>Logo Design</h3>
+        <p>
+          Unique and memorable logos that give your brand a professional identity.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">03</div>
+        <h3>Branding</h3>
+        <p>
+          Complete visual identities that help businesses look consistent
+          and professional.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">04</div>
+        <h3>Social Media</h3>
+        <p>
+          Social media posters, banners and promotional content for
+          Facebook, Instagram, TikTok and more.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">05</div>
+        <h3>Album Covers</h3>
+        <p>
+          Artwork for musicians, singles, albums, mixtapes and music projects.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">06</div>
+        <h3>Custom Designs</h3>
+        <p>
+          Have another idea? Tell me what you need and let's turn your idea
+          into a visual.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section id="work">
+
+    <div class="section-title">
+      <small>Portfolio</small>
+      <h2>Selected Work</h2>
+      <p>
+        Replace these demo images with your own designs.
+      </p>
+    </div>
+
+    <div class="portfolio">
+
+      <!-- Replace the image URLs with your own images -->
+
+      <div class="work">
+        <img
+          src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80"
+          alt="Graphic Design Project">
+        <div class="work-overlay">
+          <h3>Brand Identity</h3>
+          <p>Branding & Visual Design</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <img
+          src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=900&q=80"
+          alt="Creative Design Project">
+        <div class="work-overlay">
+          <h3>Creative Artwork</h3>
+          <p>Digital Art</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <img
+          src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=80"
+          alt="Poster Design">
+        <div class="work-overlay">
+          <h3>Poster Design</h3>
+          <p>Advertising</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <img
+          src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=900&q=80"
+          alt="Abstract Artwork">
+        <div class="work-overlay">
+          <h3>Digital Artwork</h3>
+          <p>Creative Design</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <img
+          src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80"
+          alt="Brand Design">
+        <div class="work-overlay">
+          <h3>Brand Concept</h3>
+          <p>Visual Identity</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <img
+          src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=900&q=80"
+          alt="Graphic Artwork">
+        <div class="work-overlay">
+          <h3>Social Campaign</h3>
+          <p>Social Media Design</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-text">
+
+        <div class="section-title">
+          <small>About Mkay</small>
+          <h2>Ideas into visuals.</h2>
+        </div>
+
+        <p>
+          Mkay Designs is a creative design brand built around one simple idea:
+          good design should communicate, attract attention and leave a lasting impression.
+        </p>
+
+        <p>
+          From social media graphics and posters to logos, branding and album artwork,
+          every project is created with creativity and attention to detail.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+
+      </div>
+
+      <div class="about-box">
+
+        <div class="stats">
+
+          <div class="stat">
+            <h3>01</h3>
+            <p>Creative Vision</p>
+          </div>
+
+          <div class="stat">
+            <h3>24/7</h3>
+            <p>Ideas & Creativity</p>
+          </div>
+
+          <div class="stat">
+            <h3>100%</h3>
+            <p>Custom Designs</p>
+          </div>
+
+          <div class="stat">
+            <h3>∞</h3>
+            <p>Possibilities</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section id="pricing">
+
+    <div class="section-title">
+      <small>Packages</small>
+      <h2>Simple Pricing</h2>
+      <p>
+        You can change these prices to your actual Zambian Kwacha rates.
+      </p>
+    </div>
+
+    <div class="pricing">
+
+      <div class="price-card">
+
+        <div class="label">Starter</div>
+
+        <h3>Basic Design</h3>
+
+        <div class="price">
+          K150 <small>/ project</small>
+        </div>
+
+        <ul class="features">
+          <li>1 Design Concept</li>
+          <li>1 Revision</li>
+          <li>High Resolution File</li>
+          <li>Digital Delivery</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-outline">Get Started</a>
+
+      </div>
+
+
+      <div class="price-card featured">
+
+        <div class="label">Popular</div>
+
+        <h3>Pro Design</h3>
+
+        <div class="price">
+          K300 <small>/ project</small>
+        </div>
+
+        <ul class="features">
+          <li>2 Design Concepts</li>
+          <li>3 Revisions</li>
+          <li>High Resolution Files</li>
+          <li>Social Media Sizes</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary">Choose Pro</a>
+
+      </div>
+
+
+      <div class="price-card">
+
+        <div class="label">Business</div>
+
+        <h3>Brand Package</h3>
+
+        <div class="price">
+          K800 <small>/ package</small>
+        </div>
+
+        <ul class="features">
+          <li>Logo Design</li>
+          <li>Brand Identity</li>
+          <li>Social Media Graphics</li>
+          <li>Multiple Revisions</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-outline">Get Started</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="contact">
+
+      <div class="tag">START A PROJECT</div>
+
+      <h2>
+        Got an idea?<br>
+        <span style="color:var(--accent)">Let's create it.</span>
+      </h2>
+
+      <p>
+        Have a project, business or music artwork that needs a designer?
+        Contact Mkay Designs and let's make something dope.
+      </p>
+
+      <div class="contact-buttons">
+
+        <!-- CHANGE THIS NUMBER -->
+        <a
+          href="https://wa.me/260YOURNUMBER"
+          class="btn btn-primary">
+          WhatsApp
+        </a>
+
+        <!-- CHANGE THIS EMAIL -->
+        <a
+          href="mailto:your@email.com"
+          class="btn btn-outline">
+          Email Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      © 2026 <strong>Mkay Designs</strong>. All rights reserved.
+    </div>
+
+    <div>
+      Designed by <strong>Mkay</strong>
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+      });
+    });
+
+  </script>
+
+</body>
+  </html>
